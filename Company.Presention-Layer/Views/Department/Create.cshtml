@@ -1,0 +1,21 @@
+﻿@model DepartmentDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+    <h1>Create New Data</h1>
+    <form asp-controller="Department" asp-action="Create">
+       <div class="form-group">
+        <label asp-for="Name"  class="col-form-label">Name </label>
+        <input asp-for="Name"type="text" class="form-control">
+       </div>
+        <br />
+       <div class="form-group">
+        <label asp-for="Code" class="col-form-label" >Code</label>
+        <input asp-for="Code" class="form-control" >
+       </div>
+       @Html.ValidationSummary(true,"","Error While Adding Data")
+        <br />
+        <input type="submit" value="Create"class="btn btn-primary">
+        <a asp-action="Index" class="btn btn-link">Back to List</a> 
+    </form>
